@@ -14,4 +14,10 @@ public class SkyBlockAuctionReply extends AbstractReply {
             return auctions.getAsJsonArray();
         }
     }
+
+    public String toString() {
+        return "SkyBlockAuctionReply{" +
+               "auctions = " + auctions +
+               "} " + super.toString();
+    }
 }
