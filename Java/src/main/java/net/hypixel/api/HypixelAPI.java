@@ -201,15 +201,18 @@ public class HypixelAPI {
     }
 
     public CompletableFuture<SkyBlockAuctionReply> getSkyblockAuctionsByPlayer(UUID player) {
-        return get(SkyBlockAuctionReply.class, "skyblock/auction", "player", player);
+        String playerString = player.toString().replace("-","");
+        return get(SkyBlockAuctionReply.class, "skyblock/auction", "player", playerString);
     }
 
     public CompletableFuture<SkyBlockAuctionReply> getSkyblockAuctionsByProfile(UUID profile) {
-        return get(SkyBlockAuctionReply.class, "skyblock/auction", "profile", profile);
+        String profileString = profile.toString().replace("-","");
+        return get(SkyBlockAuctionReply.class, "skyblock/auction", "profile", profileString);
     }
 
     public CompletableFuture<SkyBlockAuctionReply> getSkyblockAuctionsByUUID(UUID auction) {
-        return get(SkyBlockAuctionReply.class, "skyblock/auction", "uuid", auction);
+        String auctionString = auction.toString().replace("-","");
+        return get(SkyBlockAuctionReply.class, "skyblock/auction", "uuid", auctionString);
     }
 
     public CompletableFuture<ResourceReply> getResource(String resource) {
